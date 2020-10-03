@@ -21,16 +21,10 @@ import aiohttp
 
 
 client=discord.Client()
-
 INFO = open('commands.md', 'r')
 INFOTEXT = INFO.read()
 
-#from mcstatus import MinecraftServer
 
-# If you know the host and port, you may skip this and use MinecraftServer("example.org", 1234)
-#server = MinecraftServer.lookup("play.lemocloud.net")
-
-# 'status' is supported by all Minecraft servers that are version 1.7 or higher
 
 bot = commands.Bot(command_prefix='+', description="Hello i am Kemics Bot")
 bot.remove_command('help')
@@ -42,6 +36,8 @@ async def on_ready():
     await bot.change_presence(status=discord.Status.idle,activity=discord.Activity(type=discord.ActivityType.listening, name="+commands"))
     bot.remove_command('help')
 
+
+    
 @bot.command()
 async def appuz(ctx):
     if ctx.author.id == 508894910582226954:
@@ -49,6 +45,10 @@ async def appuz(ctx):
     else:
         await ctx.send("https://tenor.com/view/fortnite-vs-minecraft-floss-dance-gif-15393970")
 
+
+        
+        
+        
 @bot.command(pass_context=True)
 async def giphy(ctx, *, search):
 
@@ -67,12 +67,18 @@ async def giphy(ctx, *, search):
         embed.set_image(url=data['data'][gif_choice]['images']['original']['url'])
 
     await session.close()
-
     await ctx.send(embed=embed)
+
+    
+    
+    
+    
 @bot.command()
 async def snape(ctx):
     await ctx.send("https://tenor.com/view/oh-no-udint-snape-harry-potter-oh-no-udidnt-severus-snape-gif-15145672")
 
+
+    
 @bot.command()
 async def command(ctx):
     embed = discord.Embed(title="Commands help", description="{}".format(INFOTEXT),timestamp=datetime.datetime.utcnow(), color=discord.Color.blue())
@@ -93,13 +99,8 @@ async def twitter(ctx):
     OAUTH_TOKEN_SECRET = 'JV2428J9ZOQ4JPQPy4mOvAxBTvt0cB77esZE0Zjc7jGTU'
 
     auth = twitter.oauth.OAuth(OAUTH_TOKEN, OAUTH_TOKEN_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
-
     twitter_api = twitter.Twitter(auth=auth)
-
-    # http://woeid.rosselliot.co.nz/lookup/india
     INDIA_WOE_ID = 23424848
-
-    # https://developer.twitter.com/en/docs/trends/trends-for-location/api-reference/get-trends-place
     india_trends = twitter_api.trends.place(_id=INDIA_WOE_ID)
     tmp = []
 
@@ -120,7 +121,6 @@ async def twitter(ctx):
 
 
 @bot.command()
-
 async def twitterglobal(ctx):
 
 
@@ -132,13 +132,8 @@ async def twitterglobal(ctx):
     OAUTH_TOKEN_SECRET = 'JV2428J9ZOQ4JPQPy4mOvAxBTvt0cB77esZE0Zjc7jGTU'
 
     auth = twitter.oauth.OAuth(OAUTH_TOKEN, OAUTH_TOKEN_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
-
     twitter_api = twitter.Twitter(auth=auth)
-
-    # http://woeid.rosselliot.co.nz/lookup/india
     INDIA_WOE_ID = 1
-
-    # https://developer.twitter.com/en/docs/trends/trends-for-location/api-reference/get-trends-place
     india_trends = twitter_api.trends.place(_id=INDIA_WOE_ID)
     tmpr = []
 
@@ -152,10 +147,13 @@ async def twitterglobal(ctx):
     embed = discord.Embed(title="Trending WorldWide", description=f"{tempo}",timestamp=datetime.datetime.utcnow(), color=discord.Color.blue())
     await ctx.send(embed=embed)
 
+
+
 @bot.command()
 async def bans(ctx):
     async for entry in ctx.guild.audit_logs(action=discord.AuditLogAction.ban):
         await ctx.send('{0.user} banned {0.target}'.format(entry))
+
 
 @bot.command()
 async def info(ctx):
@@ -183,6 +181,9 @@ async def users(ctx):
     embed.set_thumbnail(url="https://i.ibb.co/LRFZ3Td/Ke-Mi-CS-Icon-in-Black.jpg")
     await ctx.send(embed=embed)
 
+
+    
+    
 @bot.command()
 async def triads(ctx):
 
@@ -216,23 +217,18 @@ async def triads(ctx):
 
         obj = YoutubeSubscriberCount()
 
-
-
         embed = discord.Embed(title="Arun Triads Youtube  ", description="", timestamp=datetime.datetime.utcnow(), color=discord.Color.blue())
         embed.add_field(name="  Subscribers  ", value="```"     f"{obj.get}"   "```")
-
         embed.add_field(name="   Views   ", value="```"f"{obj.got}""```")
         embed.insert_field_at(index=5,name="   Total Videos Uploaded   ", value="```"f"{obj.video}""```")
-
         embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/729329283251830855/753947641196576808/ATG_Avatar_Icon.jpg")
-
-        # embed.set_thumbnail(url=f"{ctx.guild.icon}")
-
         print("works")
-
-
         await ctx.send(embed=embed)
 
+
+        
+        
+        
 @bot.command()
 async def pewds(ctx):
 
@@ -269,18 +265,15 @@ async def pewds(ctx):
 
         embed = discord.Embed(title="Pewdiepie Youtube  ", description="", timestamp=datetime.datetime.utcnow(), color=discord.Color.blue())
         embed.add_field(name="  Subscribers  ", value="```"     f"{obj.get}"   "```")
-
         embed.add_field(name="   Views   ", value="```"f"{obj.got}""```")
         embed.insert_field_at(index=5,name="   Total Videos Uploaded   ", value="```"f"{obj.video}""```")
-
         embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/729329283251830855/747670153491120128/5339509023269a4a019da5ec9e2a276b.jpg")
-
-        # embed.set_thumbnail(url=f"{ctx.guild.icon}")
-
         print("works")
         await ctx.send(embed=embed)
 
 
+
+        
 @bot.command()
 async def aswin(ctx):
     from apiclient.discovery import build
@@ -312,23 +305,17 @@ async def aswin(ctx):
 
     obj = YoutubeSubscriberCount()
 
-    embed = discord.Embed(title=" Scary Ghost Gaming  ", description="", timestamp=datetime.datetime.utcnow(),
-                          color=discord.Color.blue())
+    embed = discord.Embed(title=" Scary Ghost Gaming  ", description="", timestamp=datetime.datetime.utcnow(), color=discord.Color.blue())
     embed.add_field(name="  Subscribers  ", value="```"     f"{obj.get}"   "```")
-
     embed.add_field(name="   Views   ", value="```"f"{obj.got}""```")
     embed.insert_field_at(index=5, name="   Total Videos Uploaded   ", value="```"f"{obj.video}""```")
-
-    embed.set_thumbnail(
-        url="https://cdn.discordapp.com/attachments/729329283251830855/756462099613614110/unnameddf.jpg")
-
-    # embed.set_thumbnail(url=f"{ctx.guild.icon}")
-
+    embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/729329283251830855/756462099613614110/unnameddf.jpg")
     print("works")
-
     await ctx.send(embed=embed)
 
 
+
+    
 @bot.command()
 async def nobi(ctx):
     from apiclient.discovery import build
@@ -367,10 +354,9 @@ async def nobi(ctx):
     embed.add_field(name="   Views   ", value="```"f"{obj.got}""```")
     embed.insert_field_at(index=5, name="   Total Videos Uploaded   ", value="```"f"{obj.video}""```")
 
-    embed.set_thumbnail(
-        url="https://cdn.discordapp.com/attachments/729329283251830855/756463273842573332/unnamed.jpg")
+    embed.set_thumbnail(url="https://cdn.discordapp.com/attachments/729329283251830855/756463273842573332/unnamed.jpg")
 
-    # embed.set_thumbnail(url=f"{ctx.guild.icon}")
+    
 
     print("works")
 
