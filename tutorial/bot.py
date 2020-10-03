@@ -581,4 +581,4 @@ async def crn(ctx):
     print(table)
 
 
-bot.run("NzA4OTY3MzUxMzcwMTIxMjM3.XrfDTA.JSwvLdCPVldlgn4OLbtwqG_kOFY")
+bot.run("Token")
