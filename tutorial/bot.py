@@ -437,27 +437,10 @@ async def minecraft(ctx, username='Shrek'):
 
 
 
-    #elif message.content ==("+log"):
-        #log = Client.wait_for(message)
-
-        # elif message.content ==("+log"):
-        #  log = Client.wait_for(message)
-
-#@bot.command(helpinfo='Let me Google that for you')
-#async def google(ctx, *, searchquery: str):
- #   '''
-  #  Sarcastic site for helping googling
-   # '''
-    #await ctx.send('<https://lmgtfy.com/?iie=1&q={}>'
-     #              .format(urllib.parse.quote_plus(searchquery)))
+  
 
 @bot.command(helpinfo='Wikipedia summary', aliases=['w', 'wiki'])
 async def wikipedia(ctx, *, query: str):
-
-
-    '''
-    Uses Wikipedia APIs to summarise search
-    '''
     sea = requests.get(
         ('https://en.wikipedia.org//w/api.php?action=query'
          '&format=json&list=search&utf8=1&srsearch={}&srlimit=5&srprop='
@@ -488,14 +471,13 @@ async def wikipedia(ctx, *, query: str):
         embed.timestamp = lastedited
         await ctx.send('**Search result for:** ***"{}"***:'.format(query), embed=embed)
 
-@bot.command(helpinfo='Searches the web (or images if typed first)')
+
+        
+        
+        
+ @bot.command(helpinfo='Searches the web (or images if typed first)')
 async def google(ctx, *, searchquery: str):
 
-
-    '''
-    Should be a group in the future
-    Googles searchquery, or images if you specified that
-    '''
     searchquerylower = searchquery.lower()
     if searchquerylower.startswith('images '):
         await ctx.send('<https://www.google.com/search?tbm=isch&q={}>'
@@ -504,15 +486,16 @@ async def google(ctx, *, searchquery: str):
         await ctx.send('<https://www.google.com/search?q={}>'
                        .format(urllib.parse.quote_plus(searchquery)))
 
+
+        
+        
 @bot.command(helpinfo='Picks randomly between multiple choices')
 async def pick(ctx, *choices: str):
-    '''
-    Picks randomly from all choices provided.
-    '''
     await ctx.send((random.choice(choices)) + ', I choose you!')
 
 
-@bot.command()
+
+ @bot.command()
 async def trends(ctx):
     from pytrends.request import TrendReq
     pytrend = TrendReq()
