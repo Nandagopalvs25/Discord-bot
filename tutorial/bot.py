@@ -126,10 +126,10 @@ async def twitterglobal(ctx):
 
     import twitter
     import json
-    CONSUMER_KEY = 'gzHlo3jDG5K2uuhG3gueLVzGO'
-    CONSUMER_SECRET = 'vx5F2CDYGLatSUTzUXpRN6uyePVo4mUUkj1gR5tPS3EeFz6XYj'
-    OAUTH_TOKEN = '1293871946463981570-9C3lyLNyPHWn0H6RbMBABhiBZ2hzvO'
-    OAUTH_TOKEN_SECRET = 'JV2428J9ZOQ4JPQPy4mOvAxBTvt0cB77esZE0Zjc7jGTU'
+    CONSUMER_KEY = '#'
+    CONSUMER_SECRET = #'
+    OAUTH_TOKEN = '#O'
+    OAUTH_TOKEN_SECRET = '#'
 
     auth = twitter.oauth.OAuth(OAUTH_TOKEN, OAUTH_TOKEN_SECRET, CONSUMER_KEY, CONSUMER_SECRET)
     twitter_api = twitter.Twitter(auth=auth)
@@ -191,7 +191,7 @@ async def triads(ctx):
         from apiclient.discovery import build
 
         class YoutubeSubscriberCount(object):
-            def __init__(self, api_key='AIzaSyDTkoWHkpmPIbWNGx_gCa5iKXTnfNW-rVE'):
+            def __init__(self, api_key='#'):
                 self.api_key = api_key
                 self.youtube = build('youtube', 'v3', developerKey=api_key)
 
@@ -235,7 +235,7 @@ async def pewds(ctx):
         from apiclient.discovery import build
 
         class YoutubeSubscriberCount(object):
-            def __init__(self, api_key='AIzaSyDTkoWHkpmPIbWNGx_gCa5iKXTnfNW-rVE'):
+            def __init__(self, api_key='#'):
                 self.api_key = api_key
                 self.youtube = build('youtube', 'v3', developerKey=api_key)
 
@@ -279,7 +279,7 @@ async def aswin(ctx):
     from apiclient.discovery import build
 
     class YoutubeSubscriberCount(object):
-        def __init__(self, api_key='AIzaSyDTkoWHkpmPIbWNGx_gCa5iKXTnfNW-rVE'):
+        def __init__(self, api_key=#'):
             self.api_key = api_key
             self.youtube = build('youtube', 'v3', developerKey=api_key)
 
@@ -321,7 +321,7 @@ async def nobi(ctx):
     from apiclient.discovery import build
 
     class YoutubeSubscriberCount(object):
-        def __init__(self, api_key='AIzaSyDTkoWHkpmPIbWNGx_gCa5iKXTnfNW-rVE'):
+        def __init__(self, api_key=#'):
             self.api_key = api_key
             self.youtube = build('youtube', 'v3', developerKey=api_key)
 
@@ -368,7 +368,7 @@ async def cruzo(ctx):
     from apiclient.discovery import build
 
     class YoutubeSubscriberCount(object):
-        def __init__(self, api_key='AIzaSyDTkoWHkpmPIbWNGx_gCa5iKXTnfNW-rVE'):
+        def __init__(self, api_key='#'):
             self.api_key = api_key
             self.youtube = build('youtube', 'v3', developerKey=api_key)
 
